@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>De Green Basket/Oders</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .product img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        
+        .product input {
+            margin-left: 10px;
+        }
+        
+        #selectedProducts {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border: 1px solid #000;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>DE GREEN BASKET</h1>
+        <p class="slogan">
+            <b style="font-size: 30px;"></b><br>
+
+        </p>
+    </header>
+    <div class="status">
+        <marquee behavior="" direction="left">
+            Oder #576276 is delivered to Polokwani, Nwamitwa | Oder #347876 is delivered to Bushbukridge, Hluvukani, Mungoni st | Oder #753126 is delivered to Acornhoek, Cotondale, Zitha Bar | Oder #436532 is delivered to Nelspruit, Ngodini, MakeIt st| Oder #523593
+            delivered to Nelspruit, Whoodhouse, Moonlight Tarven
+        </marquee>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">Services</a>
+        <a href="Register.html">Sign-Up</a>
+        <a href="login.html">Sign-In</a>
+        <a class="order" href="order.html" style="display: none;">Order</a>
+    </nav>
+    <div id="content">
+        <form name="order" id="order">
+            <div id="Instore" class="instore_eperience">
+                <fieldset>
+                    <legend>Today's Special</legend>
+                    <div class="products">
+                        <label for="Beans">
+                            <img src="KooBakedBeans.png" class="item">
+                            <br>Beans <b>R45</b> <br>
+                        </label>
+                        <input type="checkbox" data-name="Beans" id="Beans" class=".product-checkbox" data-price="45.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Beetroot ">
+                            <img src="beetroot.jpeg " class="item ">
+                            <br>780g Beetroot <b>R35</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Beetroot" id="Beetroot " class=".product-checkbox" data-price="35.00">
+                    </div>
+                    <div class="products ">
+                        <label for="CookingOil ">
+                            <img src="Cooking oil.jpeg " class="item ">
+                            <br>5L Cooking Oil <b>R185</b>
+                        </label><br>
+                        <input type="checkbox" data-name="CookingOil" id="CookingOil " class=".product-checkbox" data-price="185.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Flour ">
+                            <img src="Flour.jpeg " class="item">
+                            <br>5kg Flour <b>R75</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Flour" id="Flour " class=".product-checkbox" data-price="75.00">
+                    </div>
+                    <div class="products ">
+                        <label for="MazeMeal ">
+                            <img src="maze meal.png " class="item ">
+                            <br>1Okg Maze Meal <b>R120</b> <br>
+                        </label>
+                        <input type="checkbox" data-name="Maze Meal" id="MazeMeal " class=".product-checkbox" data-price="120.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Mayonnaise ">
+                            <img src="mayonnaise.png " class="item ">
+                            <br>3kg Mayonnaise <b>R160</b><br>
+                        </label>
+                        <input type="checkbox" " id="Mayonnaise " class=".product-checkbox " data-name="Mayonnaise data-price="160.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Raja ">
+                            <img src="Raja.png " class="item ">
+                            <br>450g Raja <b>R40</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Raja " id="Raja " class=".product-checkbox" data-price="40.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Rice ">
+                            <img src="images.jpeg " class="item ">
+                            <br>10kg Rice <b>R250</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Rice " id="Rice " class=".product-checkbox" data-price="250.00">
+                    </div>
+                    <div class="products ">
+                        <label for="Sugar ">
+                            <img src="Sugar.jpeg " class="item ">
+                            <br>5kg Sugar <b>R60</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Sugar " id="Sugar " class=".product-checkbox" data-price="60.00">
+                    </div>
+                    <div class="products ">
+                        <label for="TomatoSauce ">
+                            <img src="tomato sauce.jpeg " class="item ">
+                            <br>Tomato Sauce <b>R30</b><br>
+                        </label>
+                        <input type="checkbox" data-name="Tomato Sauce" id="TomatoSauce " class=".product-checkbox" data-price="30.00">
+                    </div>
+                    <br><br>
+                </fieldset>
+            </div>
+
+            <div class="promotion ">
+                <div id="selectedProducts ">
+                    <h3>Selected Products</h3>
+                    <blockquote>
+                        <ul id="productList "></ul>
+                        <p>Total: R<span id="totalCost">0.00</span></p>
+                    </blockquote>
+                </div>
+                <br><br>
+                <input id="btnPurchase" type="button" value="Purchase" onclick="pay()">
+            </div>
+        </form>
+    </div>
+    <script>
+        const checkboxes = document.querySelectorAll('.product-checkbox');
+        const productList = document.getElementById('productList');
+        const totalCost = document.getElementById('totalCost');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateSelectedProducts);
+        });
+
+        function updateSelectedProducts() {
+            productList.innerHTML = '';
+            let total = 0;
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    const name = checkbox.getAttribute('data-name');
+                    const price = parseFloat(checkbox.getAttribute('data-price'));
+                    total += price;
+                    const li = document.createElement('li');
+                    li.textContent = `${name} - $${price.toFixed(2)}`;
+                    productList.appendChild(li);
+                }
+            });
+            totalCost.textContent = total.toFixed(2);
+        }
+
+        function pay() {
+            const paymentMethod = prompt('Enter payment method (cash or credit card):');
+            if (paymentMethod.toLowerCase() === 'cash') {
+                const paymentAmount = parseFloat(prompt('Enter payment amount:'));
+                const total = parseFloat(totalCost.textContent);
+                if (paymentAmount >= total) {
+                    const change = paymentAmount - total;
+                    alert(`Payment successful! Change: R {change.toFixed(2)}`);
+                } else {
+                    alert('Insufficient funds.');
+                }
+            } else if (paymentMethod.toLowerCase() === 'credit card') {
+                alert('Payment successful!');
+            } else {
+                alert('Invalid payment method.');
+            }
+        }
+    </script>
+</body>
+
+<footer>
+    <p>&copy; 2025 De Green Basket. All rights reserved.</p>
+</footer>
+
+</html>

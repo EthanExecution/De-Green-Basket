@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>De Green Basket/Oders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    <header>
+        <h1>DE GREEN BASKET</h1>
+        <p class="slogan">
+            <b style="font-size: 30px;"></b><br>
+
+        </p>
+    </header>
+    <div class="status">
+        <marquee behavior="" direction="left">
+            &#x1F525;&#x1F449;&#x1F449;Shop online today and enjoy: <b>10%</b> off your first purchase&#x1F525; | Free delivery on orders <b>over R450</b>&#x1F4B0; &#x1F697;&#x1F697; | Friendly service and expert advice | Visit us today and discover a
+            world of freshness!.&#x1F448;&#x1F448;&#x1F525;
+        </marquee>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">Services</a>
+        <a class="register.html" href="Register.html" style="display: none;">Sign-Up</a>
+        <a class="login.html" href="login.html" style="display: none;">Sign-In</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <div id="content">
+        <form name="register" id="register">
+            <div class="instore_eperience">
+                <fieldset>
+                    <legend>Register</legend>
+                    <p class="spacing"></p>
+                    <table>
+                        <tr>
+                            <td class="row1">First Name:</td>
+                            <td class="row2">*</td>
+                            <td class="row3"><input type="text" id="FirstName" placeholder="Enter your first name" maxlength="20"></td>
+                        </tr>
+                        <tr>
+                            <td class="row1">Second Name:</td>
+                            <td class="row2"></td>
+                            <td class="row3"><input type="text" placeholder="Enter your second name" maxlength="20"></td>
+                        </tr>
+                        <tr>
+                            <td class="row1">Last Name:</td>
+                            <td class="row2">*</td>
+                            <td class="row3"><input type="text" id="LastName" placeholder="Enter your last name" maxlength="20"></td>
+                        </tr>
+                        <tr>
+                            <td class="row1">Title:</td>
+                            <td class="row2">*</td>
+                            <td class="row3">
+                                <select name="Title" id="cboTitle">
+                                    <option value="">Select your title</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Miss">Miss</option>
+                                    <option value="Dr">Dr</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row1">Gender:</td>
+                            <td class="row2">*</td>
+                            <td class="row3">
+                                <label><input type="radio" name="Male">Male</label>
+                                <label><input type="radio" name="Female">Female</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="row1 ">ID Number:</td>
+                            <td class="row2 ">*</td>
+                            <td class="row3 "><input type="text " id="IDNumber" placeholder="Enter your ID number" maxlength="13 "></td>
+                        </tr>
+                        <tr>
+                            <td class="row1 ">Email Address:</td>
+                            <td class="row2 ">*</td>
+                            <td class="row3 "><input type="email " id="EmailAddress " maxlength="35 " placeholder="email@example.com "></td>
+                        </tr>
+                        <tr>
+                            <td class="row1 ">Phone Number:</td>
+                            <td class="row2 ">*</td>
+                            <td class="row3 "><input type="text " id="PhoneNumber " maxlength="10 " placeholder="0123456789 "></td>
+                        </tr>
+                        <tr>
+                            <td class="row1 ">Password:</td>
+                            <td class="row2 ">*</td>
+                            <td class="row3 "><input type="password " id="Password " placeholder="Create a password " maxlength="25 "></td>
+                        </tr>
+                        <tr>
+                            <td class="row1 ">Confirm Password:</td>
+                            <td class="row2 ">*</td>
+                            <td class="row3 "><input type="password " id="ConfirmPassword " placeholder="Re-enter your password " maxlength="25 "></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="rowDisability ">
+                                <label for="chkTerms">Agree to the terms & conditions.</label>
+                                <input type="checkbox" id="chkTerms" onclick="Disability()">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <p class="spacing "></p>
+                <input type="button" value="Sign-Up" id="btnSignUp" onclick="Validation()" src="login.html">
+                <p class="spacing "></p>
+            </div>
+        </form>
+    </div>
+    <!-- LINKING MY JS WITH HTML -->
+    <script src="script.js "></script>
+</body>
+<footer>
+    <p>&copy; 2025 De Green Basket. All rights reserved.</p>
+</footer>
+
+</html>
